@@ -1,4 +1,4 @@
-import { Body, Controller, HttpCode, Param, Put } from '@nestjs/common';
+import { Body, Controller, HttpCode, Param, Patch, Put } from '@nestjs/common';
 import { ZodValidationPipe } from 'src/pipes/zod-validation-pipe';
 import { z } from 'zod';
 import { EditBookService } from './edit-book.service';
@@ -18,7 +18,7 @@ type EditBookBodySchema = z.infer<typeof editBookBodySchema>;
 export class EditBookController {
   constructor(private editBook: EditBookService) {}
 
-  @Put()
+  @Patch()
   @HttpCode(204)
   async handle(
     @Body(bodyValidationPipe) body: EditBookBodySchema,

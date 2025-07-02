@@ -1,7 +1,6 @@
 import { Body, Controller, HttpCode, Post } from '@nestjs/common';
 import { ZodValidationPipe } from '../pipes/zod-validation-pipe';
 import { z } from 'zod';
-import { title } from 'process';
 import { CreateBookService } from './create-book.service';
 
 const createBookBodySchema = z.object({
