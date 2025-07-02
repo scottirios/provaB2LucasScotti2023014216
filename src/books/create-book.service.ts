@@ -1,5 +1,5 @@
 import { ConflictException, Injectable } from '@nestjs/common';
-import { BooksRepository } from './books-repository';
+import { BookRepository } from './books-repository';
 
 interface CreateBookServiceRequest {
   title: string;
@@ -10,7 +10,7 @@ interface CreateBookServiceRequest {
 
 @Injectable()
 export class CreateBookService {
-  constructor(private booksRepository: BooksRepository) {}
+  constructor(private booksRepository: BookRepository) {}
 
   async execute({
     title,

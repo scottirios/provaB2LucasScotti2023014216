@@ -1,5 +1,5 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { BooksRepository } from './books-repository';
+import { BookRepository } from './books-repository';
 
 export interface Book {
   id: string;
@@ -16,10 +16,10 @@ type FindAllBooksServiceResponse = {
 };
 
 @Injectable()
-export class FetchRecentModelsService {
-  constructor(private booksRepository: BooksRepository) {}
+export class FindAllBooksService {
+  constructor(private booksRepository: BookRepository) {}
 
-  async execute(): Promise<FindAllBooksServiceResponse> {
+  async execute(): Promise<FindAllBooksServiceResponse[] | any> {
     const books = await this.booksRepository.findAll();
 
     const newBooks: Book[] = [];
