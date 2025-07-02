@@ -10,6 +10,9 @@ import { BookRepository } from './books/books-repository';
 import { FIndAllBooksController } from './books/find-all-books.controller';
 import { GetBookByIdController } from './books/get-by-id.controller';
 import { GetBookByIdService } from './books/get-book-by-id.service';
+import { DeleteBookController } from './books/delete-book.controller';
+import { EditBookController } from './books/edit-book.controller';
+import { EditBookService } from './books/edit-book.service';
 
 @Module({
   imports: [],
@@ -18,6 +21,8 @@ import { GetBookByIdService } from './books/get-book-by-id.service';
     CreateBookController,
     FIndAllBooksController,
     GetBookByIdController,
+    DeleteBookController,
+    EditBookController,
   ],
   providers: [
     AppService,
@@ -27,6 +32,7 @@ import { GetBookByIdService } from './books/get-book-by-id.service';
     FindAllBooksService,
     BookRepository,
     GetBookByIdService,
+    EditBookService,
   ],
 })
 export class AppModule {}
